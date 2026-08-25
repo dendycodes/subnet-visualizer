@@ -20,6 +20,7 @@ import AnimatedNumber from "./AnimatedNumber";
 import SubnetSplitter from "./SubnetSplitter";
 import HostGrid from "./HostGrid";
 import ConfigHelper from "./ConfigHelper";
+import Logomark from "./Logomark";
 
 const DEFAULT_IP = "192.168.1.10";
 const DEFAULT_PREFIX = 24;
@@ -66,6 +67,13 @@ export default function SubnetCalculator() {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center gap-3 text-center"
       >
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+          className="drop-shadow-[0_0_24px_rgba(56,189,248,0.25)]"
+        >
+          <Logomark className="h-12 w-12 sm:h-14 sm:w-14" />
+        </motion.div>
         <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white/40">
           IPv4 subnet visualizer
         </span>
