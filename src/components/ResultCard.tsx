@@ -27,7 +27,7 @@ export default function ResultCard({
         ? "bg-fuchsia-400"
         : accent === "accent"
           ? "bg-emerald-400"
-          : "bg-white/25";
+          : "bg-ink/25";
 
   async function copy() {
     try {
@@ -48,25 +48,27 @@ export default function ResultCard({
       transition={{ delay, duration: 0.4, ease: "easeOut" }}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className="glass group relative flex flex-col gap-1.5 overflow-hidden rounded-2xl p-4 text-left transition-colors hover:bg-white/[0.07]"
+      className="glass group relative flex flex-col gap-1.5 overflow-hidden rounded-2xl p-4 text-left transition-colors hover:bg-ink/[0.07]"
     >
       <span className={`absolute inset-y-0 left-0 w-[3px] ${barColor}`} />
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium uppercase tracking-wider text-white/45">
+        <span className="text-xs font-medium uppercase tracking-wider text-ink/45">
           {label}
         </span>
         <span
-          className={`text-[10px] font-medium text-white/30 transition-opacity ${
-            copied ? "opacity-100 text-emerald-400" : "opacity-0 group-hover:opacity-100"
+          className={`text-[10px] font-medium text-ink/30 transition-opacity ${
+            copied
+              ? "opacity-100 text-emerald-600 dark:text-emerald-400"
+              : "opacity-0 group-hover:opacity-100"
           }`}
         >
           {copied ? "copied" : "copy"}
         </span>
       </div>
-      <span className="mono text-lg font-semibold text-white sm:text-xl">
+      <span className="mono text-lg font-semibold text-ink sm:text-xl">
         {display ?? value}
       </span>
-      {hint && <span className="text-xs text-white/40">{hint}</span>}
+      {hint && <span className="text-xs text-ink/40">{hint}</span>}
     </motion.button>
   );
 }

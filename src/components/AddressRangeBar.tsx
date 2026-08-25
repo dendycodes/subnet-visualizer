@@ -9,7 +9,7 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex h-16 w-full overflow-hidden rounded-2xl border border-white/10 sm:h-20">
+      <div className="flex h-16 w-full overflow-hidden rounded-2xl border border-ink/10 sm:h-20">
         <AnimatePresence mode="popLayout" initial={false}>
           {hasRange ? (
             <motion.div
@@ -22,10 +22,10 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
               className="flex min-w-[4.5rem] flex-col items-center justify-center gap-0.5 bg-sky-500/20 px-2"
               style={{ flexBasis: 0 }}
             >
-              <span className="text-[10px] uppercase tracking-wider text-sky-300/80">
+              <span className="text-[10px] uppercase tracking-wider text-sky-700/90 dark:text-sky-300/80">
                 network
               </span>
-              <span className="mono text-xs font-semibold text-sky-200 sm:text-sm">
+              <span className="mono text-xs font-semibold text-sky-700 dark:text-sky-200 sm:text-sm">
                 {intToIp(info.networkInt)}
               </span>
             </motion.div>
@@ -42,10 +42,10 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
               className="flex min-w-[7rem] flex-col items-center justify-center gap-0.5 bg-gradient-to-r from-emerald-500/15 via-emerald-400/20 to-emerald-500/15 px-2"
               style={{ flexBasis: 0 }}
             >
-              <span className="text-[10px] uppercase tracking-wider text-emerald-300/80">
+              <span className="text-[10px] uppercase tracking-wider text-emerald-700/90 dark:text-emerald-300/80">
                 usable host range
               </span>
-              <span className="mono text-xs font-semibold text-emerald-200 sm:text-sm">
+              <span className="mono text-xs font-semibold text-emerald-700 dark:text-emerald-200 sm:text-sm">
                 {intToIp(info.firstHostInt)} &ndash; {intToIp(info.lastHostInt)}
               </span>
             </motion.div>
@@ -59,10 +59,10 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
               transition={{ type: "spring", stiffness: 220, damping: 30 }}
               className="flex flex-1 flex-col items-center justify-center gap-0.5 bg-amber-500/15 px-2"
             >
-              <span className="text-[10px] uppercase tracking-wider text-amber-300/80">
+              <span className="text-[10px] uppercase tracking-wider text-amber-700/90 dark:text-amber-300/80">
                 {isSlash31 ? "point-to-point link (RFC 3021)" : "single host"}
               </span>
-              <span className="mono text-xs font-semibold text-amber-200 sm:text-sm">
+              <span className="mono text-xs font-semibold text-amber-700 dark:text-amber-200 sm:text-sm">
                 {intToIp(info.firstHostInt)}
                 {isSlash31 ? ` – ${intToIp(info.lastHostInt)}` : ""}
               </span>
@@ -80,10 +80,10 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
               className="flex min-w-[4.5rem] flex-col items-center justify-center gap-0.5 bg-rose-500/20 px-2"
               style={{ flexBasis: 0 }}
             >
-              <span className="text-[10px] uppercase tracking-wider text-rose-300/80">
+              <span className="text-[10px] uppercase tracking-wider text-rose-700/90 dark:text-rose-300/80">
                 broadcast
               </span>
-              <span className="mono text-xs font-semibold text-rose-200 sm:text-sm">
+              <span className="mono text-xs font-semibold text-rose-700 dark:text-rose-200 sm:text-sm">
                 {intToIp(info.broadcastInt)}
               </span>
             </motion.div>

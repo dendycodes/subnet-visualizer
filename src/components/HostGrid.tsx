@@ -19,7 +19,7 @@ export default function HostGrid({ info }: { info: SubnetInfo }) {
 
   if (total > MAX_VISIBLE) {
     return (
-      <div className="rounded-xl bg-white/[0.03] px-4 py-8 text-center text-sm text-white/40">
+      <div className="rounded-xl bg-ink/[0.03] px-4 py-8 text-center text-sm text-ink/40">
         This block holds {total.toLocaleString("en-US")} addresses — too many to draw one
         by one. Split it into /24 blocks or smaller in the panel below to see every host.
       </div>
@@ -64,7 +64,7 @@ export default function HostGrid({ info }: { info: SubnetInfo }) {
           );
         })}
       </div>
-      <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-white/45">
+      <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-ink/45">
         <Legend color="bg-sky-400" label="network address" />
         <Legend color="bg-amber-300" label="suggested gateway" />
         <Legend color="bg-emerald-400/70" label="usable host" />

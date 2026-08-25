@@ -43,15 +43,15 @@ export default function SubnetSplitter({
     <div className="glass flex flex-col gap-5 rounded-3xl p-5 sm:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h3 className="text-sm font-semibold text-white">Break this network into subnets</h3>
-          <p className="text-xs text-white/40">
+          <h3 className="text-sm font-semibold text-ink">Break this network into subnets</h3>
+          <p className="text-xs text-ink/40">
             Drag to see how {intToIp(info.networkInt)}/{info.prefix} divides into equal,
             routable subnets — click one to open it in the calculator above.
           </p>
         </div>
         {!disabled && (
           <div className="flex items-center gap-3">
-            <span className="mono text-xs text-white/40">
+            <span className="mono text-xs text-ink/40">
               {formatNumber(splits.length)} &times; /{effectivePrefix}
             </span>
             <input
@@ -60,28 +60,28 @@ export default function SubnetSplitter({
               max={maxPrefix}
               value={effectivePrefix}
               onChange={(e) => setNewPrefix(Number(e.target.value))}
-              className="h-2 w-40 cursor-pointer appearance-none rounded-full bg-white/10 accent-fuchsia-400"
+              className="h-2 w-40 cursor-pointer appearance-none rounded-full bg-ink/10 accent-fuchsia-400"
             />
           </div>
         )}
       </div>
 
       {disabled ? (
-        <p className="rounded-xl bg-white/[0.03] px-4 py-3 text-sm text-white/40">
+        <p className="rounded-xl bg-ink/[0.03] px-4 py-3 text-sm text-ink/40">
           A /32 already identifies a single address &mdash; nothing smaller to split.
         </p>
       ) : (
         <div className="flex flex-col items-center gap-0">
-          <div className="flex flex-col items-center gap-1 text-white/60">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-sky-300">
+          <div className="flex flex-col items-center gap-1 text-ink/60">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 bg-ink/[0.04] text-sky-600 dark:text-sky-300">
               <RouterIcon />
             </span>
-            <span className="mono text-[11px] text-white/40">
+            <span className="mono text-[11px] text-ink/40">
               {intToIp(info.networkInt)}/{info.prefix}
             </span>
           </div>
-          <div className="h-4 w-px bg-white/20" />
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="h-4 w-px bg-ink/20" />
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-ink/20 to-transparent" />
 
           <motion.div layout className="flex w-full gap-3 overflow-x-auto pt-4 pb-1">
             <AnimatePresence mode="popLayout">
@@ -99,15 +99,15 @@ export default function SubnetSplitter({
                   className="group relative flex shrink-0 flex-col items-center gap-0"
                   style={{ minWidth: "9.5rem" }}
                 >
-                  <span className="absolute -top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-white/20 transition-colors group-hover:bg-fuchsia-400/70" />
-                  <div className="flex w-full flex-col gap-0.5 rounded-xl border border-white/10 bg-white/[0.02] px-3 py-2.5 text-left transition-colors group-hover:border-fuchsia-400/50 group-hover:bg-white/[0.05]">
-                    <span className="text-[10px] uppercase tracking-wider text-white/35">
+                  <span className="absolute -top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-ink/20 transition-colors group-hover:bg-fuchsia-400/70" />
+                  <div className="flex w-full flex-col gap-0.5 rounded-xl border border-ink/10 bg-ink/[0.02] px-3 py-2.5 text-left transition-colors group-hover:border-fuchsia-400/50 group-hover:bg-ink/[0.05]">
+                    <span className="text-[10px] uppercase tracking-wider text-ink/35">
                       subnet {s.index + 1}
                     </span>
-                    <span className="mono text-xs font-semibold text-white sm:text-sm">
+                    <span className="mono text-xs font-semibold text-ink sm:text-sm">
                       {intToIp(s.networkInt)}/{effectivePrefix}
                     </span>
-                    <span className="text-[10px] text-white/35">
+                    <span className="text-[10px] text-ink/35">
                       {formatNumber(s.usableHosts)} usable
                     </span>
                   </div>

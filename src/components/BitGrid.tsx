@@ -13,7 +13,7 @@ export default function BitGrid({ ipInt, prefix }: { ipInt: number; prefix: numb
         {octets.map((octetBits, oi) => (
           <div
             key={oi}
-            className="flex gap-[3px] rounded-xl bg-white/[0.03] p-1.5 sm:gap-1"
+            className="flex gap-[3px] rounded-xl bg-ink/[0.03] p-1.5 sm:gap-1"
           >
             {octetBits.map((bit, bi) => {
               const globalIndex = oi * 8 + bi;
@@ -40,7 +40,7 @@ export default function BitGrid({ ipInt, prefix }: { ipInt: number; prefix: numb
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50">
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-ink/50">
         <span className="flex items-center gap-1.5">
           <span className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
           network &middot; {prefix} bit{prefix === 1 ? "" : "s"}

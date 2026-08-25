@@ -22,8 +22,8 @@ export default function Card({
       className="glass flex flex-col gap-4 rounded-3xl p-5 sm:p-7"
     >
       <div>
-        <h3 className="text-sm font-semibold text-white">{title}</h3>
-        {subtitle && <p className="text-xs text-white/40">{subtitle}</p>}
+        <h3 className="text-sm font-semibold text-ink">{title}</h3>
+        {subtitle && <p className="text-xs text-ink/40">{subtitle}</p>}
       </div>
       {children}
     </motion.section>
