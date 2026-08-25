@@ -55,6 +55,7 @@ actual network topology — all animated, all live as you type.
 | 🌍 **Position in IPv4 space** | A bar showing how large the current block is relative to the entire IPv4 address space. |
 | ⚙️ **Config helper** | A suggested gateway IP, a suggested DHCP pool, and a copyable router-config snippet. |
 | 🕸️ **Subnet splitter as a topology diagram** | Divide the network into equal subnets and see them rendered as a router-and-subnets diagram; click one to load it back into the calculator. |
+| 🌗 **Light & dark themes** | A persisted toggle switches the whole UI — panels, gradients, accent colors — between a dark and a light theme. |
 
 ## 🧰 Tech stack
 
@@ -63,6 +64,7 @@ actual network topology — all animated, all live as you type.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS 4](https://tailwindcss.com/)
 - [Framer Motion](https://motion.dev/) for every transition and animation
+- [next-themes](https://github.com/pacocoursey/next-themes) for the light/dark toggle
 
 ## 🚀 Getting started
 
@@ -116,6 +118,8 @@ src/
     Card.tsx                                            Shared glass panel wrapper
     GlowBackground.tsx                                    Animated gradient background
     Footer.tsx                                              Author card
+    ThemeProvider.tsx                                         next-themes wrapper
+    ThemeToggle.tsx                                             Light/dark toggle button
   lib/
     subnet.ts                 All subnet math: parsing, masks, ranges, splitting
 ```
