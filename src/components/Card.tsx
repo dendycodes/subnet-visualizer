@@ -23,7 +23,7 @@ export default function Card({
     >
       <div>
         <h3 className="text-sm font-semibold text-ink">{title}</h3>
-        {subtitle && <p className="text-xs text-ink/40">{subtitle}</p>}
+        {subtitle && <p className="text-xs text-ink/60 dark:text-ink/40">{subtitle}</p>}
       </div>
       {children}
     </motion.section>

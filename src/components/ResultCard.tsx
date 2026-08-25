@@ -48,15 +48,15 @@ export default function ResultCard({
       transition={{ delay, duration: 0.4, ease: "easeOut" }}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className="glass group relative flex flex-col gap-1.5 overflow-hidden rounded-2xl p-4 text-left transition-colors hover:bg-ink/[0.07]"
+      className="glass group relative flex flex-col gap-1.5 overflow-hidden rounded-2xl p-4 text-left transition-colors hover:bg-ink/[0.12] dark:hover:bg-ink/[0.07]"
     >
       <span className={`absolute inset-y-0 left-0 w-[3px] ${barColor}`} />
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium uppercase tracking-wider text-ink/45">
+        <span className="text-xs font-medium uppercase tracking-wider text-ink/65 dark:text-ink/45">
           {label}
         </span>
         <span
-          className={`text-[10px] font-medium text-ink/30 transition-opacity ${
+          className={`text-[10px] font-medium text-ink/50 dark:text-ink/30 transition-opacity ${
             copied
               ? "opacity-100 text-emerald-600 dark:text-emerald-400"
               : "opacity-0 group-hover:opacity-100"
@@ -68,7 +68,7 @@ export default function ResultCard({
       <span className="mono text-lg font-semibold text-ink sm:text-xl">
         {display ?? value}
       </span>
-      {hint && <span className="text-xs text-ink/40">{hint}</span>}
+      {hint && <span className="text-xs text-ink/60 dark:text-ink/40">{hint}</span>}
     </motion.button>
   );
 }

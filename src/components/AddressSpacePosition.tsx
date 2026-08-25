@@ -18,12 +18,12 @@ export default function AddressSpacePosition({ info }: { info: SubnetInfo }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center justify-between text-xs text-ink/40">
+      <div className="flex items-center justify-between text-xs text-ink/60 dark:text-ink/40">
         <span>0.0.0.0</span>
         <span>where your subnet sits in the full IPv4 space</span>
         <span>255.255.255.255</span>
       </div>
-      <div className="relative h-3 w-full overflow-hidden rounded-full bg-ink/[0.04]">
+      <div className="relative h-3 w-full overflow-hidden rounded-full bg-ink/[0.075] dark:bg-ink/[0.04]">
         <motion.div
           layout
           initial={false}
@@ -32,7 +32,7 @@ export default function AddressSpacePosition({ info }: { info: SubnetInfo }) {
           className="absolute top-0 h-full rounded-full bg-gradient-to-r from-sky-400 to-fuchsia-400 shadow-[0_0_16px_rgba(129,140,248,0.6)]"
         />
       </div>
-      <div className="text-center text-[11px] text-ink/35">
+      <div className="text-center text-[11px] text-ink/55 dark:text-ink/35">
         {intToIp(info.networkInt)}/{info.prefix} covers{" "}
         {formatPercent((info.totalAddresses / FULL_SPACE) * 100)}% of all IPv4 addresses
       </div>

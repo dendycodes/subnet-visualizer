@@ -52,7 +52,7 @@ export default function Footer() {
             e.currentTarget.style.setProperty("--x", `${e.clientX - rect.left}px`);
             e.currentTarget.style.setProperty("--y", `${e.clientY - rect.top}px`);
           }}
-          className="glass group relative flex flex-col items-center gap-6 overflow-hidden rounded-3xl p-7 text-center transition-colors hover:border-ink/20 sm:flex-row sm:gap-7 sm:p-9 sm:text-left"
+          className="glass group relative flex flex-col items-center gap-6 overflow-hidden rounded-3xl p-7 text-center transition-colors hover:border-ink/32 dark:hover:border-ink/20 sm:flex-row sm:gap-7 sm:p-9 sm:text-left"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -76,13 +76,13 @@ export default function Footer() {
           </div>
 
           <div className="relative flex flex-1 flex-col gap-2">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink/35">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink/55 dark:text-ink/35">
               crafted by
             </span>
             <span className="text-gradient text-3xl font-extrabold tracking-tight sm:text-4xl">
               @dendycodes
             </span>
-            <p className="max-w-md text-sm text-ink/45 sm:text-[15px]">
+            <p className="max-w-md text-sm text-ink/65 dark:text-ink/45 sm:text-[15px]">
               Designed and built this animated subnet visualizer — bit grids, live
               topology, host maps, and all.
             </p>
@@ -90,7 +90,7 @@ export default function Footer() {
               {STACK.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-ink/10 bg-ink/[0.03] px-2.5 py-1 text-[11px] text-ink/40"
+                  className="rounded-full border border-ink/20 dark:border-ink/10 bg-ink/[0.055] dark:bg-ink/[0.03] px-2.5 py-1 text-[11px] text-ink/60 dark:text-ink/40"
                 >
                   {tech}
                 </span>
@@ -98,7 +98,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <span className="relative flex shrink-0 items-center gap-2 rounded-full border border-ink/15 bg-ink/[0.04] px-5 py-3 text-sm font-semibold text-ink/75 transition-colors group-hover:border-sky-400/50 group-hover:bg-sky-400/10 group-hover:text-ink">
+          <span className="relative flex shrink-0 items-center gap-2 rounded-full border border-ink/28 dark:border-ink/15 bg-ink/[0.075] dark:bg-ink/[0.04] px-5 py-3 text-sm font-semibold text-ink/88 dark:text-ink/75 transition-colors group-hover:border-sky-400/50 group-hover:bg-sky-400/10 group-hover:text-ink">
             <GitHubIcon />
             Follow on GitHub
             <ArrowIcon />

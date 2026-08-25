@@ -74,13 +74,13 @@ export default function SubnetCalculator() {
         >
           <Logomark className="h-12 w-12 sm:h-14 sm:w-14" />
         </motion.div>
-        <span className="rounded-full border border-ink/10 bg-ink/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-ink/40">
+        <span className="rounded-full border border-ink/20 dark:border-ink/10 bg-ink/[0.055] dark:bg-ink/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-ink/60 dark:text-ink/40">
           IPv4 subnet visualizer
         </span>
         <h1 className="text-gradient text-4xl font-bold tracking-tight sm:text-5xl">
           See your subnet, bit by bit
         </h1>
-        <p className="max-w-xl text-sm text-ink/45 sm:text-base">
+        <p className="max-w-xl text-sm text-ink/65 dark:text-ink/45 sm:text-base">
           Type an address, drag the prefix, and watch the network and host portions,
           address ranges, and subnet splits animate in real time.
         </p>
@@ -189,7 +189,7 @@ export default function SubnetCalculator() {
 
           <SubnetSplitter info={info} onSelect={handleSelectSplit} />
 
-          <p className="pb-4 text-center text-xs text-ink/25">
+          <p className="pb-4 text-center text-xs text-ink/45 dark:text-ink/25">
             {formatNumber(info.totalAddresses)} total addresses &middot;{" "}
             {formatNumber(info.usableHosts)} usable for hosts
           </p>

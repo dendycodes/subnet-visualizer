@@ -46,7 +46,7 @@ export default function ThemeToggle() {
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.92 }}
       aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} theme` : "Toggle theme"}
-      className="glass fixed right-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full text-ink/70 shadow-lg transition-colors hover:text-ink sm:right-6 sm:top-6"
+      className="glass fixed right-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full text-ink/85 dark:text-ink/70 shadow-lg transition-colors hover:text-ink sm:right-6 sm:top-6"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

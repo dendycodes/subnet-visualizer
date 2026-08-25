@@ -9,7 +9,7 @@ export default function AddressRangeBar({ info }: { info: SubnetInfo }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex h-16 w-full overflow-hidden rounded-2xl border border-ink/10 sm:h-20">
+      <div className="flex h-16 w-full overflow-hidden rounded-2xl border border-ink/20 dark:border-ink/10 sm:h-20">
         <AnimatePresence mode="popLayout" initial={false}>
           {hasRange ? (
             <motion.div

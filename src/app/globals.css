@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #eef1f7;
+  --background: #dfe4ee;
   --foreground: #10131c;
   --ink: #10131c;
   --net: #0284c7;
@@ -12,17 +12,18 @@
   --host-soft: #c026d3;
   --accent: #059669;
   --danger: #e11d48;
-  --panel: rgba(255, 255, 255, 0.62);
-  --panel-border: rgba(15, 20, 32, 0.09);
-  --panel-hover: rgba(15, 20, 32, 0.035);
-  --well: rgba(15, 20, 32, 0.05);
-  --well-strong: rgba(15, 20, 32, 0.06);
-  --grid-line: rgba(15, 20, 32, 0.35);
+  --panel: rgba(255, 255, 255, 0.86);
+  --panel-border: rgba(15, 20, 32, 0.13);
+  --panel-hover: rgba(15, 20, 32, 0.045);
+  --panel-shadow: 0 1px 2px rgba(15, 20, 32, 0.05), 0 14px 32px -14px rgba(15, 20, 32, 0.22);
+  --well: rgba(15, 20, 32, 0.07);
+  --well-strong: rgba(15, 20, 32, 0.09);
+  --grid-line: rgba(15, 20, 32, 0.4);
   --blob-opacity: 0.22;
   --grad-a: #0284c7;
   --grad-b: #c026d3;
-  --scrollbar: rgba(15, 20, 32, 0.15);
-  --scrollbar-hover: rgba(15, 20, 32, 0.28);
+  --scrollbar: rgba(15, 20, 32, 0.18);
+  --scrollbar-hover: rgba(15, 20, 32, 0.32);
   color-scheme: light;
 }
 
@@ -39,6 +40,7 @@
   --panel: rgba(255, 255, 255, 0.04);
   --panel-border: rgba(255, 255, 255, 0.09);
   --panel-hover: rgba(255, 255, 255, 0.07);
+  --panel-shadow: none;
   --well: rgba(0, 0, 0, 0.22);
   --well-strong: rgba(0, 0, 0, 0.32);
   --grid-line: rgba(255, 255, 255, 0.6);
@@ -102,9 +104,10 @@ body {
 .glass {
   background: var(--panel);
   border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .text-gradient {

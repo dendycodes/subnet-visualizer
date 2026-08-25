@@ -62,24 +62,24 @@ export default function ConfigHelper({ info }: { info: SubnetInfo }) {
 
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium uppercase tracking-wider text-ink/45">
+          <span className="text-xs font-medium uppercase tracking-wider text-ink/65 dark:text-ink/45">
             Router config summary
           </span>
           <button
             type="button"
             onClick={copyAll}
-            className="rounded-full border border-ink/10 bg-ink/[0.03] px-3 py-1 text-[11px] font-medium text-ink/60 transition-colors hover:border-ink/25 hover:text-ink"
+            className="rounded-full border border-ink/20 dark:border-ink/10 bg-ink/[0.055] dark:bg-ink/[0.03] px-3 py-1 text-[11px] font-medium text-ink/75 dark:text-ink/60 transition-colors hover:border-ink/38 dark:hover:border-ink/25 hover:text-ink"
           >
             {copied ? "copied ✓" : "copy all"}
           </button>
         </div>
         <motion.pre
           layout
-          className="mono overflow-x-auto rounded-xl border border-ink/10 bg-(--well-strong) px-4 py-3 text-xs leading-6 text-ink/80 sm:text-sm"
+          className="mono overflow-x-auto rounded-xl border border-ink/20 dark:border-ink/10 bg-(--well-strong) px-4 py-3 text-xs leading-6 text-ink/90 dark:text-ink/80 sm:text-sm"
         >
           {snippet}
         </motion.pre>
-        <p className="text-[11px] text-ink/30">
+        <p className="text-[11px] text-ink/50 dark:text-ink/30">
           Drop these values into your router or DHCP server&apos;s LAN / interface settings.
         </p>
       </div>
@@ -102,9 +102,9 @@ function InfoTile({
   const text = tone === "amber" ? "text-amber-700 dark:text-amber-200" : "text-emerald-700 dark:text-emerald-200";
   return (
     <div className={`flex flex-col gap-1 rounded-xl border ${ring} px-4 py-3`}>
-      <span className="text-[11px] uppercase tracking-wider text-ink/40">{label}</span>
+      <span className="text-[11px] uppercase tracking-wider text-ink/60 dark:text-ink/40">{label}</span>
       <span className={`mono text-lg font-semibold ${text}`}>{value}</span>
-      <span className="text-[11px] text-ink/35">{note}</span>
+      <span className="text-[11px] text-ink/55 dark:text-ink/35">{note}</span>
     </div>
   );
 }

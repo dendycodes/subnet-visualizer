@@ -44,14 +44,14 @@ export default function SubnetSplitter({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 className="text-sm font-semibold text-ink">Break this network into subnets</h3>
-          <p className="text-xs text-ink/40">
+          <p className="text-xs text-ink/60 dark:text-ink/40">
             Drag to see how {intToIp(info.networkInt)}/{info.prefix} divides into equal,
             routable subnets — click one to open it in the calculator above.
           </p>
         </div>
         {!disabled && (
           <div className="flex items-center gap-3">
-            <span className="mono text-xs text-ink/40">
+            <span className="mono text-xs text-ink/60 dark:text-ink/40">
               {formatNumber(splits.length)} &times; /{effectivePrefix}
             </span>
             <input
@@ -67,16 +67,16 @@ export default function SubnetSplitter({
       </div>
 
       {disabled ? (
-        <p className="rounded-xl bg-ink/[0.03] px-4 py-3 text-sm text-ink/40">
+        <p className="rounded-xl bg-ink/[0.055] dark:bg-ink/[0.03] px-4 py-3 text-sm text-ink/60 dark:text-ink/40">
           A /32 already identifies a single address &mdash; nothing smaller to split.
         </p>
       ) : (
         <div className="flex flex-col items-center gap-0">
-          <div className="flex flex-col items-center gap-1 text-ink/60">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 bg-ink/[0.04] text-sky-600 dark:text-sky-300">
+          <div className="flex flex-col items-center gap-1 text-ink/75 dark:text-ink/60">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/28 dark:border-ink/15 bg-ink/[0.075] dark:bg-ink/[0.04] text-sky-600 dark:text-sky-300">
               <RouterIcon />
             </span>
-            <span className="mono text-[11px] text-ink/40">
+            <span className="mono text-[11px] text-ink/60 dark:text-ink/40">
               {intToIp(info.networkInt)}/{info.prefix}
             </span>
           </div>
@@ -100,14 +100,14 @@ export default function SubnetSplitter({
                   style={{ minWidth: "9.5rem" }}
                 >
                   <span className="absolute -top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-ink/20 transition-colors group-hover:bg-fuchsia-400/70" />
-                  <div className="flex w-full flex-col gap-0.5 rounded-xl border border-ink/10 bg-ink/[0.02] px-3 py-2.5 text-left transition-colors group-hover:border-fuchsia-400/50 group-hover:bg-ink/[0.05]">
-                    <span className="text-[10px] uppercase tracking-wider text-ink/35">
+                  <div className="flex w-full flex-col gap-0.5 rounded-xl border border-ink/20 dark:border-ink/10 bg-ink/[0.045] dark:bg-ink/[0.02] px-3 py-2.5 text-left transition-colors group-hover:border-fuchsia-400/50 group-hover:bg-ink/[0.09] dark:group-hover:bg-ink/[0.05]">
+                    <span className="text-[10px] uppercase tracking-wider text-ink/55 dark:text-ink/35">
                       subnet {s.index + 1}
                     </span>
                     <span className="mono text-xs font-semibold text-ink sm:text-sm">
                       {intToIp(s.networkInt)}/{effectivePrefix}
                     </span>
-                    <span className="text-[10px] text-ink/35">
+                    <span className="text-[10px] text-ink/55 dark:text-ink/35">
                       {formatNumber(s.usableHosts)} usable
                     </span>
                   </div>
