@@ -2,6 +2,25 @@
   "name": "subnet-visualizer",
   "version": "0.1.0",
   "private": true,
+  "description": "An animated IPv4 subnet calculator that visualizes network/host bits, address ranges, host maps, and subnet splits as an interactive network topology.",
+  "author": "dendycodes (https://github.com/dendycodes)",
+  "license": "MIT",
+  "homepage": "https://github.com/dendycodes/subnet-visualizer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dendycodes/subnet-visualizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dendycodes/subnet-visualizer/issues"
+  },
+  "keywords": [
+    "subnet-calculator",
+    "ipv4",
+    "cidr",
+    "networking",
+    "visualization",
+    "nextjs"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +28,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "framer-motion": "^13.1.1",
     "next": "16.3.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"

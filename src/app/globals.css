@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070d;
+  --foreground: #e8ecf6;
+  --net: #38bdf8;
+  --net-soft: #7dd3fc;
+  --host: #e879f9;
+  --host-soft: #f0abfc;
+  --accent: #34d399;
+  --danger: #fb7185;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-border: rgba(255, 255, 255, 0.09);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-net: var(--net);
+  --color-net-soft: var(--net-soft);
+  --color-host: var(--host);
+  --color-host-soft: var(--host-soft);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--panel-border);
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--net);
+  color: #05070d;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--net-soft), var(--host-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-ligatures: none;
+  font-feature-settings: "tnum" 1;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -6%) scale(1.08); }
+  66% { transform: translate(-3%, 4%) scale(0.95); }
+}
+
+@keyframes drift-rev {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-5%, 5%) scale(1.05); }
+  66% { transform: translate(4%, -3%) scale(0.97); }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.blob-a {
+  animation: drift 22s ease-in-out infinite;
+}
+
+.blob-b {
+  animation: drift-rev 26s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-a, .blob-b {
+    animation: none;
+  }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.ring-spin {
+  animation: spin-slow 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring-spin {
+    animation: none;
+  }
 }
